@@ -12,7 +12,7 @@ SCENARIO ("constructorTest"){
 SCENARIO ("Addition"){
 	Complex comp1(20,13);
 	Complex comp2(12,14);
-	Comp1.add(comp2);
+	comp1.add(comp2);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
 	REQUIRE (Real == 32);
@@ -22,7 +22,7 @@ SCENARIO ("Addition"){
 SCENARIO ("Sub"){
 	Complex comp1(20,13);
 	Complex comp2(12,14);
-	Comp1.sub(comp2);
+	comp1.sub(comp2);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
 	REQUIRE (Real == 8);
@@ -31,7 +31,7 @@ SCENARIO ("Sub"){
 
 SCENARIO ("MultiNum"){
 	Complex comp1(20,13);
-	Comp1.mult(2);
+	comp1.mult(2);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
 	REQUIRE (Real == 40);
@@ -40,7 +40,7 @@ SCENARIO ("MultiNum"){
 
 SCENARIO ("DivNum"){
 	Complex comp1(20,14);
-	Comp1.div(2);
+	comp1.div(2);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
 	REQUIRE (Real == 10);
@@ -49,7 +49,7 @@ SCENARIO ("DivNum"){
 
 SCENARIO ("DivNumZero"){
 	Complex comp1(20,13);
-	Comp1.div(0);
+	comp1.div(0);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
 	REQUIRE (Real == 20);
@@ -59,7 +59,7 @@ SCENARIO ("DivNumZero"){
 SCENARIO("MultiComplex"){
 	Complex comp1(20,13);
 	Complex comp2(12,14);
-	Comp1.multi_complex(comp2);
+	comp1.multi_complex(comp2);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
 	REQUIRE (Real == 58);
