@@ -1,8 +1,8 @@
 #include "testclass.hpp"
 int main() {
-	Complex x(10, 15);
-	Complex y(23, 13);
-	
+	Complex<int> x(10, 15);
+	Complex<int> y(23, 13);
+
 	cout << "Addition: ";
 	x.add(y);
 	x.print();
@@ -23,11 +23,11 @@ int main() {
 	x.multi_complex(y);
 	x.print();
 
-	
+
 	cout << "Division by zero\n";
 	x.div(0);
 	x.print();
-	
+
 	system("pause");
 	return 0;
 }

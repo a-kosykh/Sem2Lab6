@@ -2,7 +2,7 @@
 #include <catch.hpp>
 
 SCENARIO ("constructorTest"){
-	Complex comp1(20,13);
+	Complex<int> comp1(20,13);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
 	REQUIRE (Real == 20);
@@ -10,8 +10,8 @@ SCENARIO ("constructorTest"){
 }
 
 SCENARIO ("Addition"){
-	Complex comp1(20,13);
-	Complex comp2(12,14);
+	Complex<int> comp1(20,13);
+	Complex<int> comp2(12,14);
 	comp1.add(comp2);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
@@ -20,8 +20,8 @@ SCENARIO ("Addition"){
 }
 
 SCENARIO ("Sub"){
-	Complex comp1(20,13);
-	Complex comp2(12,14);
+	Complex<int> comp1(20,13);
+	Complex<int> comp2(12,14);
 	comp1.sub(comp2);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
@@ -30,7 +30,7 @@ SCENARIO ("Sub"){
 }
 
 SCENARIO ("MultiNum"){
-	Complex comp1(20,13);
+	Complex<int> comp1(20,13);
 	comp1.mult(2);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
@@ -39,7 +39,7 @@ SCENARIO ("MultiNum"){
 }
 
 SCENARIO ("DivNum"){
-	Complex comp1(20,14);
+	Complex<int> comp1(20,14);
 	comp1.div(2);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
@@ -48,7 +48,7 @@ SCENARIO ("DivNum"){
 }
 
 SCENARIO ("DivNumZero","[!mayfail]"){
-	Complex comp1(20,13);
+	Complex<int> comp1(20,13);
 	comp1.div(0);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
@@ -57,8 +57,8 @@ SCENARIO ("DivNumZero","[!mayfail]"){
 }
 
 SCENARIO("MultiComplex"){
-	Complex comp1(20,13);
-	Complex comp2(12,14);
+	Complex<int> comp1(20,13);
+	Complex<int> comp2(12,14);
 	comp1.multi_complex(comp2);
 	double Real = comp1.getReal();
 	double Imag = comp1.getIm();
