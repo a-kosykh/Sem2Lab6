@@ -5,29 +5,28 @@ int main() {
 
 	cout << "Addition: ";
 	x.add(y);
-	x.print();
+	cout << x;
 
 	cout << "Subtraction: ";
 	x.sub(y);
-	x.print();
+	cout << x;
 
 	cout << "Multiplication by number: ";
 	x.mult(20);
-	x.print();
+	cout << x;
 
 	cout << "Division by number: ";
 	x.div(5);
-	x.print();
+	cout << x;
 
 	cout << "Multiplication by complex number: ";
 	x.multi_complex(y);
-	x.print();
+	cout << x;
 
 
 	cout << "Division by zero\n";
 	x.div(0);
-	x.print();
+	cout << x;
 
 	system("pause");
 	return 0;
-}

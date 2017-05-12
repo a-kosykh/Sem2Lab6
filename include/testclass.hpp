@@ -27,9 +27,11 @@ public:
 	void div(int num);
 	void multi_complex(Complex<T> comNum);
 
-	void print() {
+	void print(ostream&) {
 		cout << Real_ << " + i*(" << Im_ << ')' << endl;
 	}
+	
+	friend ostream& operator << (ostream&, const Complex<T>&);
 };
 
 template<typename T>
@@ -67,7 +69,12 @@ void Complex<T>::div(int num)
 		cout << "Error: " << msg;
 	}
 }
-
+template<typename T>
+ostream & operator<<(ostream & out, Complex<T> &c)
+{
+	c.print(out);
+	return out;
+}
 template<typename T>
 void Complex<T>::multi_complex(Complex<T> num)
 {
