@@ -1,5 +1,6 @@
 #include <testclass.hpp>
 #include <catch.hpp>
+#include <string>
 
 SCENARIO ("constructorTest"){
 	Complex<int> comp1(20,13);
@@ -67,8 +68,9 @@ SCENARIO("MultiComplex"){
 }
 SCENARIO("ostreamtest"){
 	Complex<int> comp1(20,13);
-	ostream out;
-	out << comp1;
-	cout << "20 + i*(13)";
-	REQUIRE(&out == &cout);
+	string out;
+	string << comp1;
+	string out1;
+	out1 << "20 + i*(13)";
+	REQUIRE(out == out1);
 }
