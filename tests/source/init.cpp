@@ -65,9 +65,3 @@ SCENARIO("MultiComplex"){
 	REQUIRE (Real == 58);
 	REQUIRE (Imag == 436);
 }
-SCENARIO("ostream<<"){
-	Complex<int> comp1(20,13);
-	cout << "20 + 13i";
-	out << comp1;
-	REQUIRE (&out == &cout);
-}	
