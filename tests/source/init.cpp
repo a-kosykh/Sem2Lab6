@@ -1,76 +1,61 @@
 #include <testclass.hpp>
 #include <catch.hpp>
-#include <string>
+
+Complex<int> x { 10, 15 };
+Complex<int> y { 2 , 5 };
+Complex<int> comp{};
 
 SCENARIO ("constructorTest"){
-	Complex<int> comp1(20,13);
-	double Real = comp1.getReal();
-	double Imag = comp1.getIm();
-	REQUIRE (Real == 20);
-	REQUIRE (Imag == 13);
+	double Real = x.getReal();
+	double Imag = x.getIm();
+	REQUIRE (Real == 10);
+	REQUIRE (Imag == 15);
 }
 
 SCENARIO ("Addition"){
-	Complex<int> comp1(20,13);
-	Complex<int> comp2(12,14);
-	comp1.add(comp2);
-	double Real = comp1.getReal();
-	double Imag = comp1.getIm();
-	REQUIRE (Real == 32);
-	REQUIRE (Imag == 27);
+	comp.add(x,y);
+	double Real = comp.getReal();
+	double Imag = comp.getIm();
+	REQUIRE (Real == 12);
+	REQUIRE (Imag == 20);
 }
 
 SCENARIO ("Sub"){
-	Complex<int> comp1(20,13);
-	Complex<int> comp2(12,14);
-	comp1.sub(comp2);
-	double Real = comp1.getReal();
-	double Imag = comp1.getIm();
+	comp.sub(x,y);
+	double Real = comp.getReal();
+	double Imag = comp.getIm();
 	REQUIRE (Real == 8);
-	REQUIRE (Imag == -1);
+	REQUIRE (Imag == 10);
 }
 
 SCENARIO ("MultiNum"){
-	Complex<int> comp1(20,13);
-	comp1.mult(2);
-	double Real = comp1.getReal();
-	double Imag = comp1.getIm();
-	REQUIRE (Real == 40);
-	REQUIRE (Imag == 26);
+	comp.mult(x,2)
+	double Real = comp.getReal();
+	double Imag = comp.getIm();
+	REQUIRE (Real == 20);
+	REQUIRE (Imag == 30);
 }
 
 SCENARIO ("DivNum"){
-	Complex<int> comp1(20,14);
-	comp1.div(2);
-	double Real = comp1.getReal();
-	double Imag = comp1.getIm();
-	REQUIRE (Real == 10);
-	REQUIRE (Imag == 7);
+	comp.div(x,5);
+	double Real = comp.getReal();
+	double Imag = comp.getIm();
+	REQUIRE (Real == 2);
+	REQUIRE (Imag == 3);
 }
 
 SCENARIO ("DivNumZero","[!mayfail]"){
-	Complex<int> comp1(20,13);
-	comp1.div(0);
-	double Real = comp1.getReal();
-	double Imag = comp1.getIm();
-	REQUIRE (Real == 20);
-	REQUIRE (Imag == 13);
+	comp.div(x,0);
+	double Real = comp.getReal();
+	double Imag = comp.getIm();
+	REQUIRE (Real == 0);
+	REQUIRE (Imag == 0);
 }
 
 SCENARIO("MultiComplex"){
-	Complex<int> comp1(20,13);
-	Complex<int> comp2(12,14);
-	comp1.multi_complex(comp2);
-	double Real = comp1.getReal();
-	double Imag = comp1.getIm();
-	REQUIRE (Real == 58);
-	REQUIRE (Imag == 436);
-}
-SCENARIO("ostreamtest"){
-	Complex<int> comp1(20,13);
-	string out;
-	string << comp1;
-	string out1;
-	out1 << "20 + i*(13)";
-	REQUIRE(out == out1);
+	comp.multC(x,y)
+	double Real = comp.getReal();
+	double Imag = comp.getIm();
+	REQUIRE (Real == -55);
+	REQUIRE (Imag == 80);
 }

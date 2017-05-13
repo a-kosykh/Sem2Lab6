@@ -1,32 +1,32 @@
 #include "testclass.hpp"
 int main() {
-	Complex<int> x(10, 15);
-	Complex<int> y(23, 13);
+	Complex<int> x { 10, 15 };
+	Complex<int> y { 2 , 5 };
+	Complex<int> comp{};
 
-	cout << "Addition: ";
-	x.add(y);
-	cout << x;
+	cout << "Addition:\n";
+	comp.add(x, y);
+	cout << comp << endl;
+	
+	cout << "Substraction:\n";
+	comp.sub(x, y);
+	cout << comp << endl;
 
-	cout << "Subtraction: ";
-	x.sub(y);
-	cout << x;
+	cout << "Division by number:\n";
+	comp.div(x, 5);
+	cout << comp << endl;
 
-	cout << "Multiplication by number: ";
-	x.mult(20);
-	cout << x;
+	cout << "Division by zero:\n";
+	comp.div(x, 0);
+	cout << comp << endl;
+	
+	cout << "Multiplication by number:\n";
+	comp.mult(x, 2);
+	cout << comp << endl;
 
-	cout << "Division by number: ";
-	x.div(5);
-	cout << x;
-
-	cout << "Multiplication by complex number: ";
-	x.multi_complex(y);
-	cout << x;
-
-
-	cout << "Division by zero\n";
-	x.div(0);
-	cout << x;
+	cout << "Multiplication by complex number:\n";
+	comp.multC(x, y);
+	cout << comp << endl;
 
 	system("pause");
 	return 0;
