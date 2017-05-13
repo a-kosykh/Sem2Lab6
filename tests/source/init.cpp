@@ -53,7 +53,7 @@ SCENARIO ("DivNumZero","[!mayfail]"){
 }
 
 SCENARIO("MultiComplex"){
-	comp.multC(x,y)
+	comp.multC(x,y);
 	int Real = comp.getReal();
 	int Imag = comp.getIm();
 	REQUIRE (Real == -55);
